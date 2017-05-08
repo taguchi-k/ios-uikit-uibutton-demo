@@ -50,5 +50,19 @@ class ViewController: UIViewController {
         button.center = self.view.center
     }
 
+    @IBAction func didTapButton(_ sender: UIButton) {
+
+        print("処理前タイトル: \(sender.currentTitle!)")
+
+        sender.isSelected = !sender.isSelected
+
+        if sender.isSelected {
+            sender.setTitle("On", for: .normal)
+        } else {
+            sender.setTitle("Off", for: .normal)
+        }
+
+        print("処理後タイトル: \(sender.currentTitle!)")
+    }
 }
 
